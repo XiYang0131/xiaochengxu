@@ -8,6 +8,7 @@
     "navigationBarTextStyle": "black",
     "backgroundTextStyle": "light"
   },
+  "renderer": "webview",
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
