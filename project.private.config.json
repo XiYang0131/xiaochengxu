@@ -1,0 +1,7 @@
+{
+  "description": "Local private config for WeChat DevTools",
+  "projectname": "decision-helper",
+  "setting": {
+    "compileHotReLoad": true
+  }
+}
