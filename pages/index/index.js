@@ -27,15 +27,17 @@ Page({
 
   // Click handler: mock loading and generate random comparison data
   onCompare() {
-    const { optionA, optionB } = this.data;
+    const rawA = this.data.optionA.trim();
+    const rawB = this.data.optionB.trim();
 
-    if (!optionA.trim() || !optionB.trim()) {
-      wx.showToast({
-        title: '请先输入两个选项',
-        icon: 'none'
-      });
-      return;
-    }
+    // Allow direct use without mandatory input (no "login/name"-like blocking step)
+    const safeOptionA = rawA || '选项A';
+    const safeOptionB = rawB || '选项B';
+
+    this.setData({
+      optionA: safeOptionA,
+      optionB: safeOptionB
+    });
 
     wx.showLoading({ title: '对比中...' });
 
