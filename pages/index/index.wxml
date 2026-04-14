@@ -1,0 +1,67 @@
+<view class="container">
+  <view class="card">
+    <view class="title">今天帮你选什么？</view>
+
+    <view class="input-group">
+      <input
+        class="input"
+        placeholder="请输入选项 A"
+        value="{{optionA}}"
+        data-field="optionA"
+        bindinput="onOptionInput"
+      />
+      <input
+        class="input"
+        placeholder="请输入选项 B"
+        value="{{optionB}}"
+        data-field="optionB"
+        bindinput="onOptionInput"
+      />
+    </view>
+
+    <button class="compare-btn" bindtap="onCompare">开始对比</button>
+
+    <view wx:if="{{hasResult}}" class="result-card">
+      <view class="result-label">推荐结果</view>
+      <view class="winner">{{recommendedOption}}</view>
+      <view class="match-rate">匹配度：{{matchPercent}}%</view>
+      <view class="explanation">{{explanation}}</view>
+    </view>
+  </view>
+
+  <view class="card slider-card">
+    <view class="slider-title">权重调整（实时更新）</view>
+
+    <view class="slider-item">
+      <view class="slider-row">
+        <text>价格</text>
+        <text>{{weights.price}}</text>
+      </view>
+      <slider min="0" max="100" step="1" value="{{weights.price}}" data-key="price" bindchange="onWeightChange" />
+    </view>
+
+    <view class="slider-item">
+      <view class="slider-row">
+        <text>性能</text>
+        <text>{{weights.performance}}</text>
+      </view>
+      <slider min="0" max="100" step="1" value="{{weights.performance}}" data-key="performance" bindchange="onWeightChange" />
+    </view>
+
+    <view class="slider-item">
+      <view class="slider-row">
+        <text>体验</text>
+        <text>{{weights.experience}}</text>
+      </view>
+      <slider min="0" max="100" step="1" value="{{weights.experience}}" data-key="experience" bindchange="onWeightChange" />
+    </view>
+
+    <view class="slider-item">
+      <view class="slider-row">
+        <text>便捷</text>
+        <text>{{weights.convenience}}</text>
+      </view>
+      <slider min="0" max="100" step="1" value="{{weights.convenience}}" data-key="convenience" bindchange="onWeightChange" />
+    </view>
+  </view>
+</view>
