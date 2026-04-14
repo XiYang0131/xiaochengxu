@@ -22,7 +22,7 @@
   "libVersion": "3.7.4",
   "appid": "touristappid",
   "projectname": "decision-helper",
-  "miniprogramRoot": "./",
-  "srcMiniprogramRoot": "./",
+  "miniprogramRoot": "miniprogram/",
+  "srcMiniprogramRoot": "miniprogram/",
   "condition": {}
 }
